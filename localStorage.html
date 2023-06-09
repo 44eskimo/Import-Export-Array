@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <div>
+        <textarea cols="40" rows="4" id="message"></textarea>
+        <button class="btn btn-primary" id="btn">Save</button>
+    </div>
+    <script>
+        let textareaE = document.getElementById('message');
+        let btnE = document.getElementById('btn');
+
+        btnE.onclick = function() {
+            let textE = textareaE.value;
+            localStorage.setItem('textE', textE);
+        }
+
+        let storedValue = localStorage.getItem('textE');
+
+        if (storedValue===null) {
+            storedValue="";
+        } else {
+            textareaE.value = storedValue
+        }
+
+
+    </script>
+</body>
+</html>
